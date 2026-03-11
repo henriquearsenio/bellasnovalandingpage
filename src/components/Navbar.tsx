@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoCompleta from "@/assets/logo-completa.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +15,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">b!</div>
-          <span className="font-display font-bold text-xl text-primary">bellas!</span>
+        <a href="#" className="flex items-center">
+          <img src={logoCompleta} alt="bellas!" className="h-8 md:h-10 w-auto object-contain" />
         </a>
 
         {/* Desktop only: full nav */}

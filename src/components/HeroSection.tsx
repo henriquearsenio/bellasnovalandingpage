@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import logoMenor from "@/assets/logo-menor.png";
 
 const miniChat = [
   { from: "client" as const, text: "Olá, gostaria de agendar um horário", time: "12:15" },
@@ -20,11 +21,30 @@ const miniChat = [
 const HeroSection = () => {
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 bg-gradient-to-br from-bellas-lavender via-background to-bellas-pink-light/40" />
-      <div className="absolute top-10 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-bellas-pink-light/40 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/60 rounded-full blur-3xl" />
+      {/* Background decorations - Soft Animated Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-bellas-lavender via-background to-bellas-pink-light/30" />
+      
+      {/* Animated Blobs for "Soft Gradient" look */}
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+          x: [0, 50, 0],
+          y: [0, -30, 0]
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-10 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" 
+      />
+      <motion.div 
+        animate={{ 
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.4, 0.2],
+          x: [0, -40, 0],
+          y: [0, 40, 0]
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-0 left-0 w-96 h-96 bg-bellas-pink-light/40 rounded-full blur-3xl" 
+      />
 
       <div className="container relative">
         <div className="grid md:grid-cols-2 gap-12 md:gap-8 items-center">
@@ -36,7 +56,7 @@ const HeroSection = () => {
             className="text-center md:text-left"
           >
             <div className="flex items-center gap-2 mb-6 justify-center md:justify-start">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl">b!</div>
+              <img src={logoMenor} alt="b!" className="h-12 w-12 object-contain" />
               <span className="font-display font-bold text-4xl text-primary">bellas!</span>
             </div>
 
@@ -59,13 +79,13 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
                 href="#planos"
-                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity uppercase tracking-wide text-center"
               >
                 TESTE GRÁTIS POR 15 DIAS
               </a>
               <a
                 href="#como-funciona"
-                className="border-2 border-primary text-primary px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/5 transition-colors"
+                className="border-2 border-primary text-primary px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary/5 transition-colors text-center"
               >
                 Como funciona
               </a>
