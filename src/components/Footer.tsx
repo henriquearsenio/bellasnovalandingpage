@@ -1,0 +1,18 @@
+import logoMenor from "@/assets/logo-menor.png";
+
+const Footer = () => {
+  return (
+    <footer className="py-12 border-t border-border bg-background">
+      <div className="container">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <img src={logoMenor} alt="bellas!" className="h-7" />
+          <p className="text-sm text-muted-foreground font-body">
+            © {new Date().getFullYear()} bellas! — Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

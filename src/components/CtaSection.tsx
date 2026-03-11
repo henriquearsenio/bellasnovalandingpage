@@ -1,0 +1,31 @@
+import { motion } from "framer-motion";
+
+const CtaSection = () => {
+  return (
+    <section className="py-20 md:py-28 bg-primary">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-2xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            Fique livre para atender. A gente agenda para você.
+          </h2>
+          <p className="text-primary-foreground/80 text-lg font-body mb-8">
+            Comece agora com 15 dias grátis e veja seu studio se transformar.
+          </p>
+          <a
+            href="#planos"
+            className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity"
+          >
+            COMEÇAR TESTE GRÁTIS
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default CtaSection;
