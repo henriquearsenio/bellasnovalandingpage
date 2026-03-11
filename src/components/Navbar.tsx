@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoMenor from "@/assets/logo-menor.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +14,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center">
-          <img src={logoMenor} alt="bellas!" className="h-8" />
+        <a href="#" className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">b!</div>
+          <span className="font-display font-bold text-xl text-primary">bellas!</span>
         </a>
 
         {/* Desktop only: full nav */}
@@ -31,13 +31,13 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#planos"
+            href="#"
             className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
           >
             TESTE GRÁTIS
           </a>
           <a
-            href="/entrar"
+            href="#"
             className="border border-primary text-primary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/5 transition-colors"
           >
             Entrar
@@ -47,16 +47,10 @@ const Navbar = () => {
         {/* Mobile & Tablet: buttons + hamburger */}
         <div className="flex lg:hidden items-center gap-2">
           <a
-            href="#planos"
+            href="#"
             className="bg-primary text-primary-foreground px-3 py-2 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
           >
             TESTE GRÁTIS
-          </a>
-          <a
-            href="/entrar"
-            className="border border-primary text-primary px-3 py-2 rounded-lg text-xs font-semibold hover:bg-primary/5 transition-colors"
-          >
-            Entrar
           </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -80,6 +74,12 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href="#"
+            className="block text-sm font-semibold text-primary"
+          >
+            Entrar
+          </a>
         </div>
       )}
     </nav>
