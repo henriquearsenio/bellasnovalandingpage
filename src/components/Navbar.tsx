@@ -48,13 +48,19 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center gap-2">
           <a
             href="#"
-            className="bg-primary text-primary-foreground px-3 py-2 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
+            className="bg-primary text-primary-foreground px-3 py-2 rounded-lg text-[10px] sm:text-xs font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
           >
             TESTE GRÁTIS
           </a>
+          <a
+            href="#"
+            className="border border-primary text-primary px-3 py-2 rounded-lg text-[10px] sm:text-xs font-semibold hover:bg-primary/5 transition-colors"
+          >
+            Entrar
+          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground ml-1"
+            className="text-foreground ml-1 p-1"
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -74,12 +80,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href="#"
-            className="block text-sm font-semibold text-primary"
-          >
-            Entrar
-          </a>
         </div>
       )}
     </nav>
