@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import logoMenor from "@/assets/logo-menor.png";
+import logoCompleta from "@/assets/logo-completa.png";
 
 const miniChat = [
   { from: "client" as const, text: "Olá, gostaria de agendar um horário", time: "12:15" },
@@ -55,9 +55,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center md:text-left"
           >
-            <div className="flex items-center gap-2 mb-6 justify-center md:justify-start">
-              <img src={logoMenor} alt="b!" className="h-12 w-12 object-contain" />
-              <span className="font-display font-bold text-4xl text-primary">bellas!</span>
+            <div className="flex items-center mb-8 justify-center md:justify-start">
+              <img src={logoCompleta} alt="bellas!" className="h-16 md:h-20 w-auto object-contain" />
             </div>
 
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15 font-medium text-sm px-4 py-1.5">
