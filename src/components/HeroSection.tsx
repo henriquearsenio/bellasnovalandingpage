@@ -55,8 +55,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center md:text-left"
           >
-            <div className="flex items-center mb-8 justify-center md:justify-start">
-              <img src={logoCompleta} alt="bellas!" className="h-16 md:h-20 w-auto object-contain" />
+            <div className="flex items-center mb-10 justify-center md:justify-start">
+              <img src={logoCompleta} alt="bellas!" className="h-20 md:h-28 lg:h-32 w-auto object-contain" />
             </div>
 
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15 font-medium text-sm px-4 py-1.5">
