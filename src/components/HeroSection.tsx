@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logoCompleta from "@/assets/logo-completa.png";
 import { CheckCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -36,11 +35,10 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center md:text-left"
           >
-            <img
-              src={logoCompleta}
-              alt="bellas!"
-              className="h-20 md:h-28 mx-auto md:mx-0 mb-6"
-            />
+            <div className="flex items-center gap-2 mb-6 justify-center md:justify-start">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl">b!</div>
+              <span className="font-display font-bold text-4xl text-primary">bellas!</span>
+            </div>
 
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/15 font-medium text-sm px-4 py-1.5">
               Secretária IA para salões de beleza
@@ -72,20 +70,6 @@ const HeroSection = () => {
                 Como funciona
               </a>
             </div>
-
-            {/* Stats */}
-            <div className="mt-10 flex gap-8 justify-center md:justify-start">
-              {[
-                { value: "24h", label: "Atendimento" },
-                { value: "10s", label: "Tempo de resposta" },
-                { value: "100%", label: "Automático" },
-              ].map(({ value, label }) => (
-                <div key={label} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">{value}</div>
-                  <div className="text-xs text-muted-foreground font-medium mt-1">{label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right column — phone mockup */}
@@ -96,57 +80,27 @@ const HeroSection = () => {
             className="flex justify-center md:justify-end"
           >
             <div className="relative">
-              {/* Decorative ring behind phone */}
               <div className="absolute -inset-8 rounded-full border-2 border-primary/10 animate-[pulse_4s_ease-in-out_infinite]" />
-              <div className="absolute -inset-16 rounded-full border border-primary/5" />
-
-              {/* Phone */}
               <div className="relative w-[300px] rounded-[2.5rem] border-[6px] border-foreground/15 bg-[#ECE5DD] shadow-2xl shadow-primary/20 overflow-hidden animate-float">
-                {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-foreground/15 rounded-b-2xl z-10" />
-
-                {/* WhatsApp header */}
                 <div className="bg-[#075E54] text-primary-foreground px-4 py-3 pt-8 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-xs font-bold">
-                    B
-                  </div>
+                  <div className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-xs font-bold">B</div>
                   <div>
                     <div className="font-semibold text-sm">Seu Studio</div>
                     <div className="text-[10px] opacity-80">online</div>
                   </div>
                 </div>
-
-                {/* Messages */}
                 <div className="p-3 space-y-2 pb-6">
                   {miniChat.map((msg, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 + i * 0.15 }}
-                      className={`flex ${msg.from === "client" ? "justify-end" : "justify-start"}`}
-                    >
-                      <div
-                        className={`max-w-[85%] rounded-xl px-3 py-2 text-[12px] leading-relaxed ${
-                          msg.from === "client"
-                            ? "bg-[#DCF8C6] rounded-tr-none"
-                            : "bg-card rounded-tl-none"
-                        }`}
-                      >
-                        {msg.from === "bella" && (
-                          <div className="text-[10px] font-semibold text-primary mb-0.5 italic">
-                            Bella:
-                          </div>
-                        )}
+                    <div key={i} className={`flex ${msg.from === "client" ? "justify-end" : "justify-start"}`}>
+                      <div className={`max-w-[85%] rounded-xl px-3 py-2 text-[12px] leading-relaxed ${msg.from === "client" ? "bg-[#DCF8C6] rounded-tr-none" : "bg-card rounded-tl-none"}`}>
                         <p className="text-foreground whitespace-pre-line">{msg.text}</p>
                         <div className="flex items-center justify-end gap-1 mt-0.5">
                           <span className="text-[9px] text-muted-foreground">{msg.time}</span>
-                          {msg.from === "client" && (
-                            <CheckCheck size={12} className="text-blue-500" />
-                          )}
+                          {msg.from === "client" && <CheckCheck size={12} className="text-blue-500" />}
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
