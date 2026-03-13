@@ -12,6 +12,9 @@ const Navbar = () => {
     { label: "FAQ", href: "#faq" },
   ];
 
+  const LOGIN_URL = "https://app.bellas.ia.br/login";
+  const REGISTER_URL = "https://app.bellas.ia.br/register";
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
@@ -31,13 +34,13 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#"
+            href={REGISTER_URL}
             className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
           >
             TESTE GRÁTIS
           </a>
           <a
-            href="#"
+            href={LOGIN_URL}
             className="border border-primary text-primary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/5 transition-colors"
           >
             Entrar
@@ -47,13 +50,13 @@ const Navbar = () => {
         {/* Mobile & Tablet: buttons + hamburger */}
         <div className="flex lg:hidden items-center gap-2">
           <a
-            href="#"
+            href={REGISTER_URL}
             className="bg-primary text-primary-foreground px-3 py-2 rounded-lg text-[10px] sm:text-xs font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
           >
             TESTE GRÁTIS
           </a>
           <a
-            href="#"
+            href={LOGIN_URL}
             className="border border-primary text-primary px-3 py-2 rounded-lg text-[10px] sm:text-xs font-semibold hover:bg-primary/5 transition-colors"
           >
             Entrar

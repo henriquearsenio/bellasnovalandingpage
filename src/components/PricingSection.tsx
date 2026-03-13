@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 
 const PricingSection = () => {
   const [annual, setAnnual] = useState(false);
+  const REGISTER_URL = "https://app.bellas.ia.br/register";
 
   const plans = [
     {
@@ -135,15 +136,16 @@ const PricingSection = () => {
                 </li>
               </ul>
 
-              <button
-                className={`w-full py-3 rounded-xl font-semibold text-sm transition-all ${
+              <a
+                href={REGISTER_URL}
+                className={`block w-full py-3 rounded-xl font-semibold text-sm text-center transition-all ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:opacity-90"
                     : "border-2 border-primary text-primary hover:bg-primary/5"
                 }`}
               >
                 {plan.cta}
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 const CtaSection = () => {
+  const REGISTER_URL = "https://app.bellas.ia.br/register";
+
   return (
     <section className="py-20 md:py-28 bg-primary">
       <div className="container">
@@ -17,7 +19,7 @@ const CtaSection = () => {
             Comece agora com 15 dias grátis e veja seu studio se transformar.
           </p>
           <a
-            href="#planos"
+            href={REGISTER_URL}
             className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity"
           >
             COMEÇAR TESTE GRÁTIS

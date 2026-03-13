@@ -19,6 +19,8 @@ const miniChat = [
 ];
 
 const HeroSection = () => {
+  const REGISTER_URL = "https://app.bellas.ia.br/register";
+
   return (
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
       {/* Background decorations - Soft Animated Gradient */}
@@ -77,7 +79,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="#planos"
+                href={REGISTER_URL}
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity uppercase tracking-wide text-center"
               >
                 TESTE GRÁTIS POR 15 DIAS
