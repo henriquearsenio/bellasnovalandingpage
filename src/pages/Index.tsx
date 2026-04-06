@@ -13,8 +13,10 @@ import PromotionalBanner from "@/components/PromotionalBanner";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <PromotionalBanner />
-      <Navbar />
+      <header className="sticky top-0 z-[60] w-full">
+        <PromotionalBanner />
+        <Navbar />
+      </header>
       <HeroSection />
       <PainPoints />
       <Features />

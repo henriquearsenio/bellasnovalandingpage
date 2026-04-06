@@ -16,7 +16,7 @@ const Navbar = () => {
   const REGISTER_URL = "https://app.bellas.ia.br/register";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="relative z-50 bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="flex items-center">
           <img src={logoMenor} alt="bellas!" className="h-8 md:h-10 w-auto object-contain" />
