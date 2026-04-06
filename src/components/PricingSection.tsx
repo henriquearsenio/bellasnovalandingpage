@@ -75,8 +75,9 @@ const PricingSection = () => {
 
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Planos que cabem no seu{" "}
-            <span className="text-primary italic font-serif">bolso</span>
+            <span className="text-primary italic">bolso</span>
           </h2>
+
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body mb-8 italic">
             Comece com 15 dias grátis. Sem cartão de crédito.
           </p>
