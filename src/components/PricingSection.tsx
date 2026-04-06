@@ -161,10 +161,13 @@ const PricingSection = () => {
                 <p className="text-xs md:text-sm text-muted-foreground font-body leading-relaxed">
                   {isPromoActive ? (
                     <span className="bg-destructive/5 text-destructive font-black px-2 py-1 rounded inline-block">
-                      Válido por 12 meses, depois R${plan.name === "Individual" ? "69,90" : "99,90"}
+                      Válido por 12 meses, depois R${annual 
+                        ? (plan.name === "Individual" ? "478,80" : "838,80") 
+                        : (plan.name === "Individual" ? "69,90" : "99,90")}
                     </span>
                   ) : (
                     annual ? (
+
 
                       <>
                         economize <span className="font-bold text-primary">R${(parseFloat(plan.yearly.full.replace('.','').replace(',','.')) - parseFloat(plan.yearly.price.replace('.','').replace(',','.'))).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span> por ano
