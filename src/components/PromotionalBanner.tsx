@@ -73,18 +73,19 @@ const PromotionalBanner = () => {
           <div className="hidden sm:flex items-center gap-3">
             <div className="flex gap-2 font-mono text-center">
               {[
-                { val: timeLeft.days, unit: 'd' },
-                { val: timeLeft.hours, unit: 'h' },
-                { val: timeLeft.minutes, unit: 'm' },
-                { val: timeLeft.seconds, unit: 's', color: 'text-orange-200' }
+                { val: timeLeft.days, unit: 'Dias' },
+                { val: timeLeft.hours, unit: 'Horas' },
+                { val: timeLeft.minutes, unit: 'Minutos' },
+                { val: timeLeft.seconds, unit: 'Segundos', color: 'text-orange-200' }
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center">
-                  <div className={`bg-black/20 backdrop-blur-md w-9 h-9 flex items-center justify-center rounded-lg border border-white/10 shadow-lg ${item.color || ''}`}>
+                  <div className={`bg-black/20 backdrop-blur-md w-11 h-11 flex items-center justify-center rounded-lg border border-white/10 shadow-lg ${item.color || ''}`}>
                     <span className="text-sm font-black">{String(item.val).padStart(2, '0')}</span>
                   </div>
-                  <span className="text-[8px] uppercase font-bold mt-1 opacity-70 tracking-widest">{item.unit}</span>
+                  <span className="text-[7px] uppercase font-bold mt-1 opacity-70 tracking-widest">{item.unit}</span>
                 </div>
               ))}
+
             </div>
           </div>
 
