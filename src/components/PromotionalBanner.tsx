@@ -69,40 +69,41 @@ const PromotionalBanner = () => {
         </div>
 
         <div className="flex items-center gap-6 md:gap-10">
-          {/* Timer Premium */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Timer Premium - Agora visível em todos os tamanhos */}
+          <div className="flex items-center gap-3">
             <div className="flex gap-2 font-mono text-center">
               {[
                 { val: timeLeft.days, unit: 'Dias' },
                 { val: timeLeft.hours, unit: 'Horas' },
-                { val: timeLeft.minutes, unit: 'Minutos' },
-                { val: timeLeft.seconds, unit: 'Segundos', color: 'text-orange-200' }
+                { val: timeLeft.minutes, unit: 'Mins' },
+                { val: timeLeft.seconds, unit: 'Segs', color: 'text-orange-200' }
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center">
-                  <div className={`bg-black/20 backdrop-blur-md w-11 h-11 flex items-center justify-center rounded-lg border border-white/10 shadow-lg ${item.color || ''}`}>
-                    <span className="text-sm font-black">{String(item.val).padStart(2, '0')}</span>
+                  <div className={`bg-black/20 backdrop-blur-md w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-lg border border-white/10 shadow-lg ${item.color || ''}`}>
+                    <span className="text-xs md:text-sm font-black">{String(item.val).padStart(2, '0')}</span>
                   </div>
-                  <span className="text-[7px] uppercase font-bold mt-1 opacity-70 tracking-widest">{item.unit}</span>
+                  <span className="text-[6px] md:text-[7px] uppercase font-bold mt-1 opacity-70 tracking-widest">{item.unit}</span>
                 </div>
               ))}
-
             </div>
           </div>
 
           {/* Botão CTA */}
           <a 
             href="#planos" 
-            className="group/btn relative inline-flex items-center gap-2 bg-white text-red-700 px-6 py-2.5 rounded-full text-xs md:text-sm font-black uppercase tracking-widest shadow-[0_4px_14px_0_rgba(255,255,255,0.39)] transition-all hover:scale-105 active:scale-95 hover:bg-orange-50"
+            className="group/btn relative inline-flex items-center gap-2 bg-white text-red-700 px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-sm font-black uppercase tracking-widest shadow-[0_4px_14px_0_rgba(255,255,255,0.39)] transition-all hover:scale-105 active:scale-95 hover:bg-orange-50"
           >
-            Aproveite Agora
+            <span className="hidden xs:inline">Aproveitar</span>
+            <span className="xs:hidden italic leading-none">Promo</span>
             <motion.span
               animate={{ x: [0, 4, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              <Timer size={16} />
+              <Timer size={14} className="md:size-[16px]" />
             </motion.span>
           </a>
         </div>
+
       </motion.div>
     </div>
   );
