@@ -82,7 +82,67 @@ const PricingSection = () => {
             Não é necessário cartão de crédito.
           </p>
 
+          {/* Lightning Promo Card */}
+          {isPromoActive && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto mb-16 relative group"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative bg-white border border-primary/20 rounded-[1.8rem] p-6 md:p-8 shadow-2xl overflow-hidden">
+                {/* Textura de fundo sutil */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+                
+                <div className="flex flex-col items-center relative z-10 text-center">
+                  <div className="flex items-center gap-2 mb-6">
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1], rotate: [0, 5, -5, 0] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                    >
+                      <Flame size={24} className="text-primary fill-primary/20" />
+                    </motion.div>
+                    <h3 className="text-xl md:text-2xl font-black text-foreground uppercase tracking-tight">
+                      Promoção Relâmpago termina em:
+                    </h3>
+                  </div>
+
+                  {/* Timer UI */}
+                  <div className="flex items-center justify-center gap-3 md:gap-6 mb-8">
+                    {[
+                      { label: "Dias", val: Math.floor((new Date("2026-04-15T23:59:59-03:00").getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)) },
+                      { label: "Horas", val: Math.floor(((new Date("2026-04-15T23:59:59-03:00").getTime() - new Date().getTime()) / (1000 * 60 * 60)) % 24) },
+                      { label: "Min", val: Math.floor(((new Date("2026-04-15T23:59:59-03:00").getTime() - new Date().getTime()) / 1000 / 60) % 60) },
+                      { label: "Seg", val: Math.floor(((new Date("2026-04-15T23:59:59-03:00").getTime() - new Date().getTime()) / 1000) % 60) },
+                    ].map((t, idx) => (
+                      <div key={idx} className="flex items-center gap-2 md:gap-4">
+                        <div className="flex flex-col items-center">
+                          <div className="bg-primary/10 border border-primary/20 w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-inner">
+                            <span className="text-2xl md:text-4xl font-black text-primary tracking-tighter">
+                              {String(Math.max(0, t.val)).padStart(2, '0')}
+                            </span>
+                          </div>
+                          <span className="text-[10px] md:text-xs font-bold text-muted-foreground uppercase mt-2 tracking-widest">{t.label}</span>
+                        </div>
+                        {idx < 3 && (
+                          <span className="text-2xl md:text-4xl font-black text-primary/30 mt-[-20px] md:mt-[-28px]">:</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-xs md:text-sm font-medium text-muted-foreground bg-secondary/50 px-4 py-2 rounded-full flex items-center gap-2 border border-border">
+                    Promoção válida de 06/04/2026 até 15/04/2026. Aproveite agora antes que acabe! 
+                    <span className="text-amber-500">⚠️</span>
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Toggle */}
+
           <div className="inline-flex items-center bg-muted rounded-full p-1 shadow-inner border border-border/50">
             <button
               onClick={() => setAnnual(false)}
