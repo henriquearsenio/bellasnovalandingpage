@@ -63,7 +63,7 @@ const PricingSection = () => {
           className="text-center mb-12"
         >
           {isPromoActive && (
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-1.5 rounded-full mb-6 border border-destructive/20"
@@ -79,28 +79,26 @@ const PricingSection = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body mb-8 italic">
-            Sem cartão de crédito necessário.
+            Não é necessário cartão de crédito.
           </p>
 
           {/* Toggle */}
           <div className="inline-flex items-center bg-muted rounded-full p-1 shadow-inner border border-border/50">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                !annual
+              className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${!annual
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               Mensal
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                annual
+              className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${annual
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               Anual
             </button>
@@ -115,11 +113,10 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className={`relative rounded-3xl p-8 border-2 bg-background transition-all duration-500 hover:shadow-2xl group ${
-                plan.popular
+              className={`relative rounded-3xl p-8 border-2 bg-background transition-all duration-500 hover:shadow-2xl group ${plan.popular
                   ? "border-primary shadow-xl scale-105 z-10"
                   : "border-border shadow-md"
-              } ${isPromoActive ? "hover:border-destructive/50" : ""}`}
+                } ${isPromoActive ? "hover:border-destructive/50" : ""}`}
             >
               {plan.popular && !isPromoActive && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
@@ -162,14 +159,14 @@ const PricingSection = () => {
                 <p className="text-xs md:text-sm text-muted-foreground font-body leading-relaxed">
                   {isPromoActive ? (
                     <span className="bg-destructive/5 text-destructive font-black px-2 py-1 rounded inline-block">
-                      Válido por 12 meses, depois R${annual 
-                        ? (plan.name === "Individual" ? "478,80" : "838,80") 
+                      Válido por 12 meses, depois R${annual
+                        ? (plan.name === "Individual" ? "478,80" : "838,80")
                         : (plan.name === "Individual" ? "69,90" : "99,90")}
                     </span>
                   ) : (
                     annual ? (
                       <>
-                        economize <span className="font-bold text-primary">R${(parseFloat(plan.yearly.full.replace('.','').replace(',','.')) - parseFloat(plan.yearly.price.replace('.','').replace(',','.'))).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span> por ano
+                        economize <span className="font-bold text-primary">R${(parseFloat(plan.yearly.full.replace('.', '').replace(',', '.')) - parseFloat(plan.yearly.price.replace('.', '').replace(',', '.'))).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span> por ano
                       </>
                     ) : (
                       <>
@@ -193,11 +190,10 @@ const PricingSection = () => {
 
               <a
                 href={REGISTER_URL}
-                className={`group relative overflow-hidden block w-full py-4 rounded-2xl font-black text-sm text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg ${
-                  plan.popular || isPromoActive
+                className={`group relative overflow-hidden block w-full py-4 rounded-2xl font-black text-sm text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg ${plan.popular || isPromoActive
                     ? "bg-primary text-primary-foreground hover:shadow-primary/25"
                     : "border-2 border-primary text-primary h-auto hover:bg-primary/5"
-                } ${isPromoActive && plan.popular ? "bg-destructive text-white hover:bg-destructive/90 shadow-destructive/20" : ""}`}
+                  } ${isPromoActive && plan.popular ? "bg-destructive text-white hover:bg-destructive/90 shadow-destructive/20" : ""}`}
               >
                 <span className="relative z-10 uppercase tracking-widest">{plan.cta}</span>
               </a>
