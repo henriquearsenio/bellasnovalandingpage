@@ -8,10 +8,12 @@ import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import PromotionalBanner from "@/components/PromotionalBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <PromotionalBanner />
       <Navbar />
       <HeroSection />
       <PainPoints />
@@ -27,3 +29,4 @@ const Index = () => {
 };
 
 export default Index;
+
