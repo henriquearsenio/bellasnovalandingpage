@@ -7,7 +7,8 @@ const steps = [
     number: "1",
     title: "Crie sua conta grátis",
     description:
-      "Ative seu teste de 15 dias em menos de 2 minutos. Sem complicação.",
+      "Crie sua conta em menos de 2 minutos e comece a agendar com o bellas!. Sem complicação.",
+
   },
   {
     icon: ListChecks,

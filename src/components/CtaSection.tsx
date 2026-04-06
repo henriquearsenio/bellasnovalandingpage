@@ -16,13 +16,13 @@ const CtaSection = () => {
             Fique livre para atender. A gente agenda para você.
           </h2>
           <p className="text-primary-foreground/80 text-lg font-body mb-8">
-            Comece agora com 15 dias grátis e veja seu studio se transformar.
+            Comece agora e veja seu studio se transformar com a inteligência artificial.
           </p>
           <a
             href={REGISTER_URL}
             className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-opacity"
           >
-            COMEÇAR TESTE GRÁTIS
+            QUERO COMEÇAR AGORA
           </a>
         </motion.div>
       </div>

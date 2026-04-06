@@ -28,9 +28,10 @@ const faqs = [
     a: "Sim, sem multa e sem burocracia. Você pode cancelar diretamente pelo painel administrativo quando quiser.",
   },
   {
-    q: "Os 15 dias grátis precisam de cartão de crédito?",
-    a: "Não! Você começa a usar sem precisar informar dados de pagamento. Só paga depois de comprovar que o bellas! funciona para o seu studio.",
+    q: "Preciso cadastrar cartão de crédito para começar?",
+    a: "Não! Você pode começar a configurar sua agenda e conhecer o bellas! sem informar nenhum dado de pagamento. Só paga quando decidir assinar um de nossos planos.",
   },
+
 ];
 
 const FaqSection = () => {

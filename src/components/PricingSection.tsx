@@ -79,7 +79,7 @@ const PricingSection = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body mb-8 italic">
-            Comece com 15 dias grátis. Sem cartão de crédito.
+            Sem cartão de crédito necessário.
           </p>
 
           {/* Toggle */}
@@ -168,8 +168,6 @@ const PricingSection = () => {
                     </span>
                   ) : (
                     annual ? (
-
-
                       <>
                         economize <span className="font-bold text-primary">R${(parseFloat(plan.yearly.full.replace('.','').replace(',','.')) - parseFloat(plan.yearly.price.replace('.','').replace(',','.'))).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span> por ano
                       </>
@@ -191,16 +189,7 @@ const PricingSection = () => {
                     <span className="text-foreground/90 group-hover/item:text-foreground transition-colors leading-tight">{feature}</span>
                   </li>
                 ))}
-                {!isPromoActive && (
-                  <li className="flex items-start gap-3 text-sm font-bold pt-2 border-t border-border/50">
-                    <div className="mt-0.5 bg-green-500/20 rounded-full p-0.5">
-                      <Check size={14} className="text-green-600 shrink-0" />
-                    </div>
-                    <span className="text-green-700 italic">Teste grátis por 15 dias</span>
-                  </li>
-                )}
               </ul>
-
 
               <a
                 href={REGISTER_URL}
@@ -220,4 +209,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default PricingSection;
