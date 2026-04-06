@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import logoMenor from "@/assets/logo-menor.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Lógica de Promoção: 06/04/2026 a 15/04/2026
+  const isPromoActive = useMemo(() => {
+    const now = new Date();
+    const START_DATE = new Date("2026-04-06T00:00:00-03:00");
+    const TARGET_DATE = new Date("2026-04-15T23:59:59-03:00");
+    return now >= START_DATE && now <= TARGET_DATE;
+  }, []);
 
   const links = [
     { label: "Funcionalidades", href: "#funcionalidades" },
@@ -35,9 +43,13 @@ const Navbar = () => {
           ))}
           <a
             href={REGISTER_URL}
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
+            className={`px-5 py-2.5 rounded-lg text-sm font-bold hover:opacity-90 transition-all uppercase tracking-wide shadow-sm ${
+              isPromoActive 
+                ? "bg-destructive text-white animate-pulse shadow-destructive/20" 
+                : "bg-primary text-primary-foreground"
+            }`}
           >
-            TESTE GRÁTIS
+            {isPromoActive ? "GARANTIR DESCONTO" : "TESTE GRÁTIS"}
           </a>
           <a
             href={LOGIN_URL}
@@ -51,9 +63,13 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center gap-2">
           <a
             href={REGISTER_URL}
-            className="bg-primary text-primary-foreground px-3 py-2 rounded-lg text-[10px] sm:text-xs font-bold hover:opacity-90 transition-opacity uppercase tracking-wide"
+            className={`px-3 py-2 rounded-lg text-[10px] sm:text-xs font-bold hover:opacity-90 transition-all uppercase tracking-wide ${
+              isPromoActive 
+                ? "bg-destructive text-white shadow-lg" 
+                : "bg-primary text-primary-foreground"
+            }`}
           >
-            TESTE GRÁTIS
+            {isPromoActive ? "APROVEITAR" : "TESTE GRÁTIS"}
           </a>
           <a
             href={LOGIN_URL}
@@ -89,4 +105,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
