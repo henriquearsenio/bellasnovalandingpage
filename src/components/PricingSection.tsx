@@ -186,13 +186,16 @@ const PricingSection = () => {
                     <span className="text-foreground/90 group-hover/item:text-foreground transition-colors leading-tight">{feature}</span>
                   </li>
                 ))}
-                <li className="flex items-start gap-3 text-sm font-bold pt-2 border-t border-border/50">
-                  <div className="mt-0.5 bg-green-500/20 rounded-full p-0.5">
-                    <Check size={14} className="text-green-600 shrink-0" />
-                  </div>
-                  <span className="text-green-700 italic">Teste grátis por 15 dias</span>
-                </li>
+                {!isPromoActive && (
+                  <li className="flex items-start gap-3 text-sm font-bold pt-2 border-t border-border/50">
+                    <div className="mt-0.5 bg-green-500/20 rounded-full p-0.5">
+                      <Check size={14} className="text-green-600 shrink-0" />
+                    </div>
+                    <span className="text-green-700 italic">Teste grátis por 15 dias</span>
+                  </li>
+                )}
               </ul>
+
 
               <a
                 href={REGISTER_URL}
