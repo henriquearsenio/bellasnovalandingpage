@@ -63,7 +63,7 @@ const PricingSection = () => {
           className="text-center mb-12"
         >
           {isPromoActive && (
-            <motion.div
+            <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-1.5 rounded-full mb-6 border border-destructive/20"
@@ -92,7 +92,6 @@ const PricingSection = () => {
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative bg-white border border-primary/20 rounded-[1.8rem] p-6 md:p-8 shadow-2xl overflow-hidden">
-                {/* Textura de fundo sutil */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
                 
                 <div className="flex flex-col items-center relative z-10 text-center">
@@ -108,7 +107,6 @@ const PricingSection = () => {
                     </h3>
                   </div>
 
-                  {/* Timer UI */}
                   <div className="flex items-center justify-center gap-3 md:gap-6 mb-8">
                     {[
                       { label: "Dias", val: Math.floor((new Date("2026-04-15T23:59:59-03:00").getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)) },
@@ -142,7 +140,6 @@ const PricingSection = () => {
           )}
 
           {/* Toggle */}
-
           <div className="inline-flex items-center bg-muted rounded-full p-1 shadow-inner border border-border/50">
             <button
               onClick={() => setAnnual(false)}
@@ -201,12 +198,12 @@ const PricingSection = () => {
                 <div className="flex flex-col">
                   {isPromoActive && (
                     <span className="text-sm text-destructive font-bold line-through opacity-60 mb-1">
-                      R${annual ? plan.yearly.price : plan.monthly.price}
+                      R$ {annual ? plan.yearly.price : plan.monthly.price}
                     </span>
                   )}
                   <div className="flex items-baseline gap-1">
                     <span className={`text-5xl font-black tracking-tighter ${isPromoActive ? "text-destructive" : "text-foreground"}`}>
-                      R${isPromoActive ? (annual ? PROMO_YEARLY : PROMO_MONTHLY) : (annual ? plan.yearly.price : plan.monthly.price)}
+                      R$ {isPromoActive ? (annual ? PROMO_YEARLY : PROMO_MONTHLY) : (annual ? plan.yearly.price : plan.monthly.price)}
                     </span>
                     <span className="text-muted-foreground font-bold text-sm">
                       /{annual ? "ano" : "mês"}
@@ -216,25 +213,25 @@ const PricingSection = () => {
               </div>
 
               <div className="h-12 flex items-center mb-6">
-                <p className="text-xs md:text-sm text-muted-foreground font-body leading-relaxed">
+                <div className="text-xs md:text-sm text-muted-foreground font-body leading-relaxed">
                   {isPromoActive ? (
                     <span className="bg-destructive/5 text-destructive font-black px-2 py-1 rounded inline-block">
-                      Válido por 12 meses, depois R${annual
-                        ? (plan.name === "Individual" ? "478,80" : "838,80")
+                      Válido por 12 meses, depois R$ {annual 
+                        ? (plan.name === "Individual" ? "478,80" : "838,80") 
                         : (plan.name === "Individual" ? "69,90" : "99,90")}
                     </span>
                   ) : (
                     annual ? (
                       <>
-                        economize <span className="font-bold text-primary">R${(parseFloat(plan.yearly.full.replace('.', '').replace(',', '.')) - parseFloat(plan.yearly.price.replace('.', '').replace(',', '.'))).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span> por ano
+                        economize <span className="font-bold text-primary">R$ {(parseFloat(plan.yearly.full.replace('.', '').replace(',', '.')) - parseFloat(plan.yearly.price.replace('.', '').replace(',', '.'))).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span> por ano
                       </>
                     ) : (
                       <>
-                        (nos 3 primeiros meses, depois R${plan.monthly.full})
+                        (nos 3 primeiros meses, depois R$ {plan.monthly.full})
                       </>
                     )
                   )}
-                </p>
+                </div>
               </div>
 
               <ul className="space-y-4 mb-10">
