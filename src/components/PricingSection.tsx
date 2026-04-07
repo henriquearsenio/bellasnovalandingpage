@@ -48,7 +48,8 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="planos" className="py-20 md:py-28 bg-card relative overflow-hidden scroll-mt-24 md:scroll-mt-32">
+    <section id="planos" className="py-20 md:py-28 bg-card relative overflow-hidden scroll-mt-32 md:scroll-mt-44">
+
 
       {isPromoActive && (
         <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
