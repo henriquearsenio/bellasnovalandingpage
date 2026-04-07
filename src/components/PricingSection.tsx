@@ -48,9 +48,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="planos" className="py-20 md:py-28 bg-card relative overflow-hidden scroll-mt-32 md:scroll-mt-44">
-
-
+    <section id="planos" className="py-20 md:py-28 bg-card relative overflow-hidden">
       {isPromoActive && (
         <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
           <Flame size={400} className="text-destructive rotate-12" />
@@ -65,7 +63,7 @@ const PricingSection = () => {
           className="text-center mb-12"
         >
           {isPromoActive && (
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-1.5 rounded-full mb-6 border border-destructive/20"
@@ -95,7 +93,7 @@ const PricingSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-purple-500/50 rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative bg-white border border-primary/20 rounded-[1.8rem] p-6 md:p-8 shadow-2xl overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                
+
                 <div className="flex flex-col items-center relative z-10 text-center">
                   <div className="flex items-center gap-2 mb-6">
                     <motion.div
@@ -133,7 +131,7 @@ const PricingSection = () => {
                   </div>
 
                   <p className="text-xs md:text-sm font-medium text-muted-foreground bg-secondary/50 px-4 py-2 rounded-full flex items-center gap-2 border border-border">
-                    Promoção válida de 06/04/2026 até 15/04/2026. Aproveite agora antes que acabe! 
+                    Promoção válida de 06/04/2026 até 15/04/2026. Aproveite agora antes que acabe!
                     <span className="text-amber-500">⚠️</span>
                   </p>
                 </div>
@@ -146,8 +144,8 @@ const PricingSection = () => {
             <button
               onClick={() => setAnnual(false)}
               className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${!annual
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Mensal
@@ -155,8 +153,8 @@ const PricingSection = () => {
             <button
               onClick={() => setAnnual(true)}
               className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${annual
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Anual
@@ -173,8 +171,8 @@ const PricingSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               className={`relative rounded-3xl p-8 border-2 bg-background transition-all duration-500 hover:shadow-2xl group ${plan.popular
-                  ? "border-primary shadow-xl scale-105 z-10"
-                  : "border-border shadow-md"
+                ? "border-primary shadow-xl scale-105 z-10"
+                : "border-border shadow-md"
                 } ${isPromoActive ? "hover:border-destructive/50" : ""}`}
             >
               {plan.popular && !isPromoActive && (
@@ -218,8 +216,8 @@ const PricingSection = () => {
                 <div className="text-xs md:text-sm text-muted-foreground font-body leading-relaxed">
                   {isPromoActive ? (
                     <span className="bg-destructive/5 text-destructive font-black px-2 py-1 rounded inline-block">
-                      Válido por 12 meses, depois R$ {annual 
-                        ? (plan.name === "Individual" ? "478,80" : "838,80") 
+                      Válido por 12 meses, depois R$ {annual
+                        ? (plan.name === "Individual" ? "478,80" : "838,80")
                         : (plan.name === "Individual" ? "69,90" : "99,90")}
                     </span>
                   ) : (
@@ -250,8 +248,8 @@ const PricingSection = () => {
               <a
                 href={REGISTER_URL}
                 className={`group relative overflow-hidden block w-full py-4 rounded-2xl font-black text-sm text-center transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg ${plan.popular || isPromoActive
-                    ? "bg-primary text-primary-foreground hover:shadow-primary/25"
-                    : "border-2 border-primary text-primary h-auto hover:bg-primary/5"
+                  ? "bg-primary text-primary-foreground hover:shadow-primary/25"
+                  : "border-2 border-primary text-primary h-auto hover:bg-primary/5"
                   } ${isPromoActive && plan.popular ? "bg-destructive text-white hover:bg-destructive/90 shadow-destructive/20" : ""}`}
               >
                 <span className="relative z-10 uppercase tracking-widest">{plan.cta}</span>
